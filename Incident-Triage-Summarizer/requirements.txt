@@ -1,0 +1,28 @@
+# Core Framework
+fastapi==0.115.5  # Updated for Python 3.13 support
+uvicorn[standard]==0.32.1  # Updated for Python 3.13 support
+
+# Data Validation
+pydantic==2.10.3  # Latest v2 with Python 3.13 support
+pydantic-settings==2.6.1  # Updated for compatibility
+
+# Database
+sqlalchemy==2.0.36  # Latest 2.0.x with Python 3.13 support
+aiosqlite==0.20.0  # Updated for Python 3.13
+
+# AWS SDK
+boto3==1.35.74  # Latest version with Python 3.13 support
+aioboto3==13.3.0  # Updated for Python 3.13
+
+# OpenAI
+openai==1.57.0  # Latest version with better support
+
+# Utilities
+python-dotenv==1.0.1  # Latest stable
+python-dateutil==2.9.0.post0  # Updated for Python 3.13
+structlog==24.4.0  # Latest with Python 3.13 support
+httpx==0.28.1  # Latest stable version
+
+# Data Processing
+pandas==2.2.3  # Latest with Python 3.13 support
+numpy==2.2.0  # Python 3.13 compatible version
