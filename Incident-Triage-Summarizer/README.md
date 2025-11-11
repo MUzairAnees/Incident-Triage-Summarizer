@@ -11,3 +11,17 @@ This service ingests app logs, detects patterns within those logs(errors, timeou
 - **Cloud**: AWS (S3, Lambda, RDS, CloudWatch)
 - **Container**: Docker
 - **Testing**: Pytest
+
+## Project Structure
+'''
+Incident-Triage-Summarizer/
+├── src/                    # Source code
+│   ├── api/               # API endpoints
+│   ├── models/            # Data models
+│   ├── services/          # Business logic
+│   └── analyzers/         # Log analysis logic
+├── tests/                 # Unit and integration tests
+├── infrastructure/        # AWS IaC files
+├── docker/               # Docker configuration
+└── docs/                 # Additional documentation
+'''
