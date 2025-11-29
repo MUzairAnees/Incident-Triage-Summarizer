@@ -2,37 +2,247 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Python Distribution/Packaging Files
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment (VERY CRITICAL TO .GITIGNORE)
 venv/
 env/
 ENV/
+venv.bak/
+.venv
+.ENV
 
-# Environment variables (NEVER commit these!)
+# Environment variables (MOST CRITICAL!! NEVER commit these!)
 .env
 .env.local
 *.env
+.env.*
+.env.development
+.env.production
+.env.staging
+
 
 # Database
 *.db
 *.sqlite
 *.sqlite3
+*.sql
+instance/
+
+# Database dumps
+*.dump
+*.sql.gz
+backup/
 
 # IDE
+# PyCharm
 .idea/
+*.iml
+*.iws
+.idea_modules/
+
+# VSCode
 .vscode/
+*.code-workspace
+.history/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
 *.swp
 *.swo
+*.swn
+.*.swp
+
+# Emacs
+*~
+\#*\#
 
 # OS
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
 
 # Testing
-.coverage
 htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
 .pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+test-results/
+*.log
 
 # AWS
-*.pem
+.aws/
 aws-credentials.json
+*.pem  # Private keys
+
+# Other secrets
+secrets/
+*.key
+*.cert
+*.crt
+*.pem
+private/
+
+
+# ============================================
+# DOCUMENTATION BUILDS
+# ============================================
+# Why ignore: Documentation can be rebuilt from source
+
+docs/_build/
+site/
+.mkdocs/
+
+# ============================================
+# JUPYTER NOTEBOOKS
+# ============================================
+# Why ignore: Checkpoint files are temporary
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Remove notebook outputs with sensitive data
+# Uncomment if you want to ignore notebook outputs
+# *.ipynb
+
+# ============================================
+# LOG FILES
+# ============================================
+# Why ignore: Logs are generated data, can be huge
+
+logs/
+*.log.*
+*.pid
+log.txt
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+# Why ignore: Temporary files aren't part of your project
+
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+~$*
+
+# ============================================
+# DOCKER
+# ============================================
+# Why ignore: Docker artifacts can be rebuilt
+
+.dockerignore
+docker-compose.override.yml
+
+# ============================================
+# PROJECT-SPECIFIC IGNORES
+# ============================================
+
+# Large data files (use Git LFS or S3 instead)
+data/*.csv
+data/*.json
+data/*.txt
+!data/sample_*  # Exception: Keep sample files
+
+# Model files (usually large)
+*.h5
+*.pkl
+*.joblib
+*.model
+models/
+
+# Output files
+output/
+outputs/
+results/
+*.output
+
+# ============================================
+# NODE/JAVASCRIPT (if you add a frontend later)
+# ============================================
+
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ============================================
+# SENSITIVE PROJECT FILES
+# ============================================
+
+# Configuration with real values (keep .example versions)
+config.ini
+config.yaml
+settings.json
+!config.example.ini
+!config.example.yaml
+!settings.example.json
+
+# Any file with 'secret' or 'private' in the name
+*secret*
+*private*
+!*.example
+
+# ============================================
+# EXCEPTIONS (Files to INCLUDE despite patterns above)
+# ============================================
+# Use ! to force include files
+
+!.gitignore  # This file itself should be committed
+!.env.example  # Example env file should be committed
+!requirements.txt  # Dependencies should be committed
+!README.md  # Documentation should be committed
