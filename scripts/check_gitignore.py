@@ -5,6 +5,9 @@ import subprocess
 import os
 from pathlib import Path
 
+from scripts.test_env_loading import project_root
+
+
 def check_git_status():
     # Checking which files Git will track
     print("Files that WILL be committed to GitHub:")
@@ -52,7 +55,8 @@ def check_git_status():
         print("Run: git rm --cached .env")
 
 if __name__ == "__main__":
-    if not Path(".git").exists():
+    project_root = Path(__file__).parent.parent
+    if not Path(project_root / ".git").exists():
         print("Not in a git repository yet!")
         print("Please run: git init")
     else:
