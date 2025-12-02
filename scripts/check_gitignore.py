@@ -5,10 +5,11 @@ import subprocess
 import os
 from pathlib import Path
 
-from scripts.test_env_loading import project_root
 
+def check_git_status(path_to_where_you_want):
+    # Move to the project root so all git commands + paths are correct
+    os.chdir(path_to_where_you_want)
 
-def check_git_status():
     # Checking which files Git will track
     print("Files that WILL be committed to GitHub:")
     print("="*50)
@@ -60,4 +61,4 @@ if __name__ == "__main__":
         print("Not in a git repository yet!")
         print("Please run: git init")
     else:
-        check_git_status()
+        check_git_status(project_root)

@@ -202,7 +202,6 @@ data/*.txt
 *.pkl
 *.joblib
 *.model
-models/
 
 # Output files
 output/
