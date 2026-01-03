@@ -19,11 +19,11 @@ SQLite (local file) - What you'll use for learning:
  "mysql://username:password@localhost:3306/dbname"
  """
 
-import os                                                       # Operating System interface - so that it can read environment variables (NOT JUST .env FILE)
+import os                                                       # Operating System interface - so that it can read environment variables (not JUST .env FILE)
 from pathlib import Path                                        # Best way to work with file paths - before it would be strings and that is messy ""
 from dotenv import load_dotenv                                  # this calls in load_dotenv which reads your .env file
 from src.config.project_paths import ENV_FILE, PROJECT_ROOT     # Our own import so that we can very easily pull in file path or project root
-from sqlalchemy import create_engine, event, text               #
+from sqlalchemy import create_engine, event, text               # Allows you to create an engine(
 from sqlalchemy.pool import StaticPool                          #
 from sqlalchemy.orm import sessionmaker, declarative_base       #
 
@@ -49,9 +49,9 @@ def get_database_url() -> str:
 
     else:                                                   # if there is no database_url then create a local one in a data folder you'll create here
         data_dir = PROJECT_ROOT / "data"
-        data_dir.mkdir(exist_ok=True)                       # exist_ok = true means that there will be no error if "data" dir already exists
+        data_dir.mkdir(exist_ok=True)                       # exist_ok=true means that there will be no error if "data" dir already exists
 
-        database_file = data_dir / "incident_triage.db"     # setting the path to the database file: project_root/data/incident_triage.db
+        database_file = data_dir / "incident_triage.db"     # setting the path to the database file: project_root/data/incident_triage.db [CHANGE NAME IF NEEDED]
 
         # making the actual database url using the file we make using the above code
         # as_posix() just converts the potential backslashes to front slashes so that it is usable with many db libraries
@@ -140,6 +140,9 @@ Then Base.metadata.create_all(bind=engine) looks at all the tables defined in th
 gathers their definitions, and creates the tables in the actual database.
 """
 def init_database():
+    # import here:
+    from src.models import database_models
+
     Base.metadata.create_all(bind=engine)
     print("Database tables created/verified")
 
